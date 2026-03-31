@@ -1,0 +1,110 @@
+.header { margin-bottom: 48px; }
+.tag {
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: var(--accent); text-transform: uppercase;
+  letter-spacing: 0.12em; margin-bottom: 12px;
+}
+.title { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 10px; }
+.sub   { color: var(--muted); font-size: 0.95rem; line-height: 1.6; max-width: 600px; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px; align-items: start;
+}
+
+.form {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 28px;
+}
+
+.sideLabel {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 8px; display: block;
+}
+
+/* Dropzone */
+.dropzone {
+  border: 2px dashed var(--border); border-radius: var(--radius-lg);
+  padding: 36px 24px; text-align: center; cursor: pointer;
+  margin-bottom: 24px; transition: border-color 0.2s, background 0.2s;
+}
+.dropzone:hover, .drag { border-color: var(--accent); background: rgba(0,212,255,0.04); }
+.hasFile { border-style: solid; border-color: var(--accent3); background: rgba(16,185,129,0.04); }
+
+.dropIcon { font-size: 2.5rem; margin-bottom: 10px; }
+.dropText { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+.dropSub  { font-size: 0.75rem; color: var(--muted); font-family: var(--font-mono); }
+
+.fileInfo {
+  display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.fileIcon { font-size: 1.5rem; }
+.fileName { font-weight: 700; font-size: 0.9rem; }
+.fileSize { font-size: 0.75rem; color: var(--muted); font-family: var(--font-mono); }
+.removeFile {
+  background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.25);
+  color: #FCA5A5; border-radius: 50%; width: 22px; height: 22px;
+  cursor: pointer; font-size: 0.65rem; display: flex; align-items: center; justify-content: center;
+}
+
+/* Fields */
+.fields {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 24px;
+}
+.fieldGroup { display: flex; flex-direction: column; }
+.input {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 11px 14px;
+  color: var(--text); font-family: var(--font-display);
+  font-size: 0.88rem; outline: none; transition: border-color 0.2s;
+}
+.input:focus { border-color: var(--accent); }
+.input::placeholder { color: var(--muted); }
+
+.submitBtn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff; border: none; padding: 14px;
+  border-radius: var(--radius-md); font-family: var(--font-display);
+  font-size: 0.95rem; font-weight: 700; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.submitBtn:hover:not(:disabled) { opacity: 0.85; transform: translateY(-1px); }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Recent panel */
+.recentPanel {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 24px;
+  position: sticky; top: 90px;
+}
+.emptyUploads {
+  text-align: center; padding: 40px 20px;
+  color: var(--muted); font-size: 0.82rem; font-family: var(--font-mono);
+}
+
+.uploadedCard {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 14px;
+  margin-bottom: 10px;
+  border-left: 3px solid var(--accent3);
+}
+.uploadedName { font-size: 0.92rem; font-weight: 700; margin-bottom: 3px; }
+.uploadedRole { font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; }
+.uploadedSkills { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 6px; }
+.uploadedSkill {
+  padding: 1px 8px; border-radius: 100px; font-size: 0.65rem;
+  font-family: var(--font-mono); background: rgba(0,212,255,0.07);
+  border: 1px solid rgba(0,212,255,0.18); color: var(--accent);
+}
+.uploadedId { font-size: 0.65rem; color: var(--muted); font-family: var(--font-mono); }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .recentPanel { position: static; }
+  .fields { grid-template-columns: 1fr; }
+}
